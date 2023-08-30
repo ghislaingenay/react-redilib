@@ -2,6 +2,7 @@
   "name": "react-redilib",
   "version": "0.0.0",
   "license": "MIT",
+  "typings": "./index.d.ts",
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
