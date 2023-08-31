@@ -1,4 +1,4 @@
-import { logRoles, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { SectionDivider } from '@lib/Divider';
 import '@testing-library/jest-dom';
 
