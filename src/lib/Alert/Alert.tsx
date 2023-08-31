@@ -3,7 +3,7 @@ type AlertProps = {
   message: string | JSX.Element;
   title?: string;
   type: AlertType;
-  border?: boolean;
+  haveBorder?: boolean;
 };
 
 type AlertType = 'success' | 'info' | 'warning' | 'error';
@@ -13,33 +13,27 @@ function Alert({
   message = 'Placeholder text...',
   title = 'Something',
   type = 'info',
-  border,
+  haveBorder = false,
 }: AlertProps) {
-  const colorBgDict: Record<
-    AlertType,
-    Record<'bg' | 'text' | 'bord', string>
-  > = {
+  const colorBgDict: Record<AlertType, Record<'bg' | 'border', string>> = {
     success: {
-      bg: 'bg-green-50',
-      text: 'text-green-800',
-      bord: 'border-green-800',
+      bg: 'alert-success',
+      border: 'alert-success-border',
     },
-    info: { bg: 'bg-blue-50', text: 'text-blue-800', bord: 'border-blue-800' },
+    info: { bg: 'alert-info', border: 'alert-info-border' },
     warning: {
-      bg: 'bg-orange-50',
-      text: 'text-orange-800',
-      bord: 'border-orange-800',
+      bg: 'alert-warning',
+      border: 'alert-warning-border',
     },
-    error: { bg: 'bg-red-50', text: 'text-red-800', bord: 'border-red-800' },
+    error: { bg: 'alert-error', border: 'alert-error-border' },
   };
 
-  const { bg, text, bord } = colorBgDict[type];
+  const { bg, border } = colorBgDict[type];
 
   const initialClass = 'flex items-center p-4 mb-4 text-sm rounded-lg mx-5';
-  const borderClass = border ? `border ${bord}` : '';
-  const colorClass = `${text} ${bg}`;
+  const borderClass = haveBorder ? `border ${border}` : '';
 
-  const alertClass = `${initialClass} ${colorClass} ${borderClass}`;
+  const alertClass = `${initialClass} ${bg} ${borderClass}`;
 
   return (
     <div className={alertClass} role="alert">
