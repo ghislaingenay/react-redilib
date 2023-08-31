@@ -24,7 +24,6 @@ describe('Section Divider', () => {
   it('Should contains 1 hr if no children if not provided', () => {
     render(<SectionDivider />);
     const hrElement = screen.getAllByRole('presentation', { hidden: true });
-    console.log(hrElement);
     expect(hrElement).toHaveLength(1);
   });
 
