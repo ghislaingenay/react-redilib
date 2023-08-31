@@ -1,10 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Divider } from '@lib/Divider';
+import { SectionDivider } from '@lib/Divider';
 
 export function App() {
   return (
     <div>
-      <Divider>App</Divider>
+      <SectionDivider>App</SectionDivider>
       {/* <NxWelcome title="react-redilib" /> */}
     </div>
   );
