@@ -7,7 +7,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test --watchAll",
-    "test:ci": "nx test"
+    "test:ci": "nx test",
+    "storybook": "nx run react-redilib:storybook"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@storybook/addon-essentials": "^7.2.1",
     "@storybook/addon-interactions": "^7.2.1",
+    "@storybook/addon-styling": "^1.3.7",
     "@storybook/core-server": "^7.2.1",
     "@storybook/jest": "~0.1.0",
     "@storybook/react-webpack5": "^7.2.1",
