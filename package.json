@@ -8,7 +8,8 @@
     "build": "nx build",
     "test": "nx test --watchAll",
     "test:ci": "nx test",
-    "storybook": "nx run react-redilib:storybook"
+    "storybook": "nx storybook",
+    "lint": "nx lint"
   },
   "private": true,
   "dependencies": {
