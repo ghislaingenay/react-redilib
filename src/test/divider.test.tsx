@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { logRoles, render, screen } from '@testing-library/react';
 import { SectionDivider } from '@lib/Divider';
 import '@testing-library/jest-dom';
 
@@ -15,19 +15,22 @@ describe('Section Divider', () => {
 
   it('should render with children', () => {
     render(<SectionDivider>test</SectionDivider>);
+    const textHeader = screen.getByRole('heading', { name: 'test' });
     const getTestText = screen.getByText('test');
+    expect(textHeader).toBeInTheDocument();
     expect(getTestText).toBeInTheDocument();
   });
 
   it('Should contains 1 hr if no children if not provided', () => {
     render(<SectionDivider />);
-    const hrElement = screen.getAllByRole('separator');
+    const hrElement = screen.getAllByRole('presentation', { hidden: true });
+    console.log(hrElement);
     expect(hrElement).toHaveLength(1);
   });
 
   it('Should contains 2 hr if children provided', () => {
     render(<SectionDivider>Children</SectionDivider>);
-    const hrElement = screen.getAllByRole('separator');
+    const hrElement = screen.getAllByRole('presentation', { hidden: true });
     expect(hrElement).toHaveLength(2);
   });
 
