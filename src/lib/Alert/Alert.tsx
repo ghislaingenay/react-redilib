@@ -1,4 +1,5 @@
 type AlertProps = {
+  /** some description here */
   message: string | JSX.Element;
   title?: string;
   type: AlertType;
@@ -7,22 +8,41 @@ type AlertProps = {
 
 type AlertType = 'success' | 'info' | 'warning' | 'error';
 
-function Alert({ message, title, type, border }: AlertProps) {
-  const colorDict: Record<AlertType, string> = {
-    success: 'green',
-    info: 'blue',
-    warning: 'yellow',
-    error: 'red',
+/** Some comment about the alert */
+function Alert({
+  message = 'Placeholder text...',
+  title = 'Something',
+  type = 'info',
+  border,
+}: AlertProps) {
+  const colorBgDict: Record<
+    AlertType,
+    Record<'bg' | 'text' | 'bord', string>
+  > = {
+    success: {
+      bg: 'bg-green-50',
+      text: 'text-green-800',
+      bord: 'border-green-800',
+    },
+    info: { bg: 'bg-blue-50', text: 'text-blue-800', bord: 'border-blue-800' },
+    warning: {
+      bg: 'bg-orange-50',
+      text: 'text-orange-800',
+      bord: 'border-orange-800',
+    },
+    error: { bg: 'bg-red-50', text: 'text-red-800', bord: 'border-red-800' },
   };
 
-  const borderClass = border ? `border border-${colorDict[type]}-300` : '';
-  const colorClass = `text-${colorDict[type]}-800 bg-${colorDict[type]}-50`;
+  const { bg, text, bord } = colorBgDict[type];
+
+  const initialClass = 'flex items-center p-4 mb-4 text-sm rounded-lg mx-5';
+  const borderClass = border ? `border ${bord}` : '';
+  const colorClass = `${text} ${bg}`;
+
+  const alertClass = `${initialClass} ${colorClass} ${borderClass}`;
 
   return (
-    <div
-      className={`flex items-center p-4 mb-4 text-sm rounded-lg ${colorClass} ${borderClass}`}
-      role="alert"
-    >
+    <div className={alertClass} role="alert">
       <svg
         className="flex-shrink-0 inline w-4 h-4 mr-3"
         aria-hidden="true"
