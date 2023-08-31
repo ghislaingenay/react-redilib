@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test --watchAll"
+    "test": "nx test --watchAll",
+    "test:ci": "nx test"
   },
   "private": true,
   "dependencies": {
