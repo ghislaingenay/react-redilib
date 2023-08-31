@@ -3,7 +3,7 @@
 // Definitions by: [~YOUR NAME~] <[~A URL FOR YOU~]>
 
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-
+// type HTMLElement = HTMLElement;
 type BaseHTMLProps<T extends HTMLElement> = DetailedHTMLProps<
   HTMLAttributes<T>,
   T
@@ -15,3 +15,5 @@ type TestID = { testId?: string };
 
 type DivProps = BaseHTMLProps<HTMLDivElement>;
 type DividerProps = { children?: ReactNode } & TestID;
+
+// declare function isPropsJSX(input: string | JSX.Element): boolean;
