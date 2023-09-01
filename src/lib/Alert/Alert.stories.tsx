@@ -1,7 +1,10 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import { Alert } from './Alert';
+import { within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
-const meta: Meta<typeof Alert> = {
+type TypeOfAlert = typeof Alert;
+const meta: Meta<TypeOfAlert> = {
   title: 'Components/Alert',
   component: Alert,
   tags: ['autodocs'],
@@ -9,7 +12,14 @@ const meta: Meta<typeof Alert> = {
 
 export default meta;
 
+type Story = StoryObj<TypeOfAlert>;
+
 export const Base: Story = {
+  play: ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const PlaceholderText = canvas.getByText('Placeholder text...');
+    expect(PlaceholderText).toBeInTheDocument();
+  },
   argTypes: {
     type: {
       control: {
@@ -31,7 +41,6 @@ export const Base: Story = {
 };
 
 /** Demo to show what this component can do */
-type Story = StoryObj<typeof Alert>;
 export const Demo: Story = {
   name: 'Demo',
   // parameters: {
