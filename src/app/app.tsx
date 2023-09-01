@@ -14,7 +14,6 @@ export function App() {
           type="info"
           title="Info"
           message="Please check again for more information"
-          border
         />
         <Alert
           type="warning"

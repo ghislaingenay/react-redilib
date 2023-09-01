@@ -19,6 +19,7 @@ type DividerProps = { children?: ReactNode } & TestID;
 type AlertType = 'success' | 'info' | 'warning' | 'error';
 type AlertProps = {
   /** some description here */
+  classes?: string;
   message: string | JSX.Element;
   title?: string;
   type: AlertType;
