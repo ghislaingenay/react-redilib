@@ -22,7 +22,7 @@ export const SectionDivider = ({ children, testId }: DividerProps) => {
         </div>
       ) : (
         <hr
-          className=" border-black border-1 m-0 my-2"
+          className=" border-black border-1 m-0 my-5"
           aria-hidden="true"
           role="presentation"
         />
