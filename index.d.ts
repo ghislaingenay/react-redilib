@@ -16,4 +16,12 @@ type TestID = { testId?: string };
 type DivProps = BaseHTMLProps<HTMLDivElement>;
 type DividerProps = { children?: ReactNode } & TestID;
 
-// declare function isPropsJSX(input: string | JSX.Element): boolean;
+type AlertType = 'success' | 'info' | 'warning' | 'error';
+type AlertProps = {
+  /** some description here */
+  message: string | JSX.Element;
+  title?: string;
+  type: AlertType;
+  haveBorder?: boolean;
+};
+type AlertColorDict = Record<AlertType, Record<'bg' | 'border', string>>;
