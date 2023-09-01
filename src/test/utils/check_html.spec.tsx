@@ -1,4 +1,4 @@
-import { isPropsJSX, isPropsHTML } from '@utils';
+import { isPropsJSX } from '@utils';
 
 // null or undefined cannot be tested due to TypeScript error
 //  Same for fragment
