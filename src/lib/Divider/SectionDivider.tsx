@@ -1,9 +1,9 @@
+import { setTestIdProps } from '@utils';
 import { DividerProps } from 'index';
 
 export const SectionDivider = ({ children, testId }: DividerProps) => {
-  const testIdProps = testId ? { 'data-testid': testId } : {};
   return (
-    <div aria-labelledby="section divider" {...testIdProps}>
+    <div aria-labelledby="section divider" {...setTestIdProps(testId)}>
       {children ? (
         <div className="flex flex-row gap-x-2 items-center my-2">
           <hr

@@ -1,3 +1,4 @@
+import { setTestIdProps } from '@utils';
 import { AlertProps, AlertColorDict } from 'index';
 
 /** Some comment about the alert */
@@ -6,6 +7,7 @@ function Alert({
   title = 'Something',
   type = 'info',
   haveBorder = false,
+  testId,
 }: AlertProps) {
   const colorBgDict: AlertColorDict = {
     success: {
@@ -28,7 +30,7 @@ function Alert({
   const alertClass = `${initialClass} ${bg} ${borderClass}`;
 
   return (
-    <div className={alertClass} role="alert">
+    <div className={alertClass} role="alert" {...setTestIdProps(testId)}>
       <svg
         className="flex-shrink-0 inline w-4 h-4 mr-3"
         aria-hidden="true"

@@ -23,5 +23,5 @@ type AlertProps = {
   title?: string;
   type: AlertType;
   haveBorder?: boolean;
-};
+} & TestID;
 type AlertColorDict = Record<AlertType, Record<'bg' | 'border', string>>;
