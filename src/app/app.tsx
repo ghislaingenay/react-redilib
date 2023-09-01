@@ -1,11 +1,31 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { SectionDivider } from '@lib/Divider';
+import { Alert } from '@lib/Alert';
 
 export function App() {
   return (
     <div>
-      <SectionDivider>App</SectionDivider>
-      {/* <NxWelcome title="react-redilib" /> */}
+      <div className="flex flex-col gap-10">
+        <Alert
+          type="success"
+          title="Success"
+          message="Please check again for more information"
+        />
+        <Alert
+          type="info"
+          title="Info"
+          message="Please check again for more information"
+        />
+        <Alert
+          type="warning"
+          title="Warning"
+          message="Please check again for more information"
+        />
+        <Alert
+          type="error"
+          title="Error"
+          message="Please check again for more information"
+        />
+      </div>
     </div>
   );
 }

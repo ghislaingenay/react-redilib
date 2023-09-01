@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert should render successfully 1`] = `
+<div>
+  <div
+    class="flex items-center p-4 mb-4 text-sm rounded-lg mx-5 alert-info"
+    role="alert"
+  >
+    <svg
+      aria-hidden="true"
+      class="flex-shrink-0 inline w-4 h-4 mr-3"
+      fill="currentColor"
+      focusable="false"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+      />
+    </svg>
+    <span
+      class="sr-only uppercase"
+    >
+      info
+       alert:
+    </span>
+    <div
+      class="font-bold tablet:font-medium"
+    >
+      <span
+        class="font-bold hidden tablet:inline"
+      >
+        Something
+      </span>
+       
+      Hello
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Alert should render successfully with title 1`] = `
+<div>
+  <div
+    class="flex items-center p-4 mb-4 text-sm rounded-lg mx-5 alert-info"
+    role="alert"
+  >
+    <svg
+      aria-hidden="true"
+      class="flex-shrink-0 inline w-4 h-4 mr-3"
+      fill="currentColor"
+      focusable="false"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+      />
+    </svg>
+    <span
+      class="sr-only uppercase"
+    >
+      info
+       alert:
+    </span>
+    <div
+      class="font-bold tablet:font-medium"
+    >
+      <span
+        class="font-bold hidden tablet:inline"
+      >
+        Hello
+      </span>
+       
+      Please try again...
+    </div>
+  </div>
+</div>
+`;

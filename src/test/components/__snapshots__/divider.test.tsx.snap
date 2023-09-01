@@ -8,7 +8,7 @@ exports[`Section Divider should render successfully - no children 1`] = `
     >
       <hr
         aria-hidden="true"
-        class=" border-black border-1 m-0 my-2"
+        class=" border-black border-1 m-0 my-5"
         role="presentation"
       />
     </div>
