@@ -117,30 +117,22 @@ export function Button({
     ref as unknown as React.RefObject<HTMLElement>
   );
 
-  const [textWidth, setTextWidth] = useState(0);
-
-  useEffect(() => {
-    const textWidth = document.querySelector(
-      `button[data-testid=${testId}]`
-    )?.clientWidth;
-    console.log('text width', textWidth);
-    if (textWidth) setTextWidth(textWidth);
-  }, [testId]);
-
   return (
     <button
       className={buttonCVA({ buttonType, disabled, loading, size })}
-      onClick={onClick}
       {...buttonProps}
+      onClick={onClick}
       {...setTestIdProps(testId)}
     >
-      {loading ? (
-        <span style={{ width: textWidth }}>
-          <Spinner buttonType={buttonType} size={size} />{' '}
-        </span>
-      ) : (
-        <span> {children} </span>
-      )}
+      <div className="flex">
+        {loading && (
+          // Add span to keep the the same width as the text
+          <span className="mr-1">
+            <Spinner buttonType={buttonType} size={size} />
+          </span>
+        )}
+        {children}
+      </div>
     </button>
   );
 }
