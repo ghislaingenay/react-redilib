@@ -8,13 +8,13 @@ type SpinnerProps = {
 
 export function Spinner({ buttonType, size }: SpinnerProps) {
   const loadingSVG = cva(
-    'w-4 h-4 text-gray-200 animate-spin fill-blue-600 place-self-center',
+    'w-4 h-4 text-gray-200 animate-spin place-self-center',
     {
       variants: {
         buttonType: {
           [EButtonType.SUCCESS]: 'fill-green-800',
           [EButtonType.ERROR]: 'fill-red-800',
-          [EButtonType.PRIMARY]: 'fill-orange-800',
+          [EButtonType.PRIMARY]: 'fill-blue-800',
           [EButtonType.SECONDARY]: 'fill-purple-800',
           [EButtonType.TERTIARY]: 'fill-gray-800',
           [EButtonType.GHOST]: 'fill-gray-800',
