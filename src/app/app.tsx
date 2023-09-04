@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Alert } from '@lib/Alert';
-import { Button, EButtonSize, EButtonType } from '@lib/Button';
+import { Button } from '@lib/Button';
+import { EButtonType, EButtonSize } from 'index';
 import { useState } from 'react';
 
 export function App() {

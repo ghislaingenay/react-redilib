@@ -1,6 +1,6 @@
 import { setTestIdProps } from '@utils';
-import { AlertProps, AlertColorDict } from 'index';
-import { twMerge } from 'tailwind-merge';
+import Redilib from '@types';
+import { AlertColorDict } from '@lib/global.interface';
 
 /** Some comment about the alert */
 function Alert({
@@ -9,8 +9,7 @@ function Alert({
   type = 'info',
   haveBorder = false,
   testId,
-  classes = '',
-}: AlertProps) {
+}: Redilib.AlertProps) {
   const colorBgDict: AlertColorDict = {
     success: {
       bg: 'alert-success',
@@ -32,11 +31,7 @@ function Alert({
   const alertClass = `${initialClass} ${bg} ${borderClass}`;
 
   return (
-    <div
-      className={twMerge(alertClass, classes)}
-      role="alert"
-      {...setTestIdProps(testId)}
-    >
+    <div className={alertClass} role="alert" {...setTestIdProps(testId)}>
       <svg
         className="flex-shrink-0 inline w-4 h-4 mr-3"
         aria-hidden="true"

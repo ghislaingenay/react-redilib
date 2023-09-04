@@ -1,9 +1,10 @@
-import { EButtonType, EButtonSize } from '@lib/Button';
+import { ButtonSizeVariant, ButtonTypeVariant } from '@lib/global.interface';
+import Redilib from '@types';
 import { cva } from 'class-variance-authority';
 
 type SpinnerProps = {
-  buttonType: EButtonType;
-  size: EButtonSize;
+  buttonType: Redilib.ButtonType;
+  size: Redilib.ButtonSize;
 };
 
 export function Spinner({ buttonType, size }: SpinnerProps) {
@@ -12,18 +13,18 @@ export function Spinner({ buttonType, size }: SpinnerProps) {
     {
       variants: {
         buttonType: {
-          [EButtonType.SUCCESS]: 'fill-green-800',
-          [EButtonType.ERROR]: 'fill-red-800',
-          [EButtonType.PRIMARY]: 'fill-blue-800',
-          [EButtonType.SECONDARY]: 'fill-purple-800',
-          [EButtonType.TERTIARY]: 'fill-gray-800',
-          [EButtonType.GHOST]: 'fill-gray-800',
-        },
+          success: 'fill-green-800',
+          error: 'fill-red-800',
+          primary: 'fill-blue-800',
+          secondary: 'fill-purple-800',
+          tertiary: 'fill-gray-800',
+          ghost: 'fill-gray-800',
+        } as ButtonTypeVariant,
         size: {
-          [EButtonSize.SMALL]: 'w-5 h-5 w-10',
-          [EButtonSize.MEDIUM]: 'w-6 h-6 w-12',
-          [EButtonSize.LARGE]: 'w-7 h-7 w-14',
-        },
+          small: 'w-5 h-5 w-10',
+          medium: 'w-6 h-6 w-12',
+          large: 'w-7 h-7 w-14',
+        } as ButtonSizeVariant,
       },
     }
   );
