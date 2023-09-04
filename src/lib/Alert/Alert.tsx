@@ -1,5 +1,5 @@
 import { setTestIdProps } from '@utils';
-import Redilib from '@types';
+import { AlertProps } from '@types';
 import { AlertColorDict } from '@lib/global.interface';
 
 /** Some comment about the alert */
@@ -9,7 +9,7 @@ function Alert({
   type = 'info',
   haveBorder = false,
   testId,
-}: Redilib.AlertProps) {
+}: AlertProps) {
   const colorBgDict: AlertColorDict = {
     success: {
       bg: 'alert-success',

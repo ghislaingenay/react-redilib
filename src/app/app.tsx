@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Alert } from '@lib/Alert';
 import { Button } from '@lib/Button';
-import { EButtonType, EButtonSize } from 'index';
+import Redilib from '@types';
 import { useState } from 'react';
 
 export function App() {
@@ -14,16 +14,12 @@ export function App() {
   return (
     <div className="p-5 max-w-[1280px]">
       <div className="flex flex-col gap-10">
-        <Button
-          buttonType={EButtonType.SUCCESS}
-          size={EButtonSize.LARGE}
-          loading={loading}
-        >
+        <Button buttonType="success" size="large" loading={loading}>
           Success
         </Button>
         <Button
-          buttonType={EButtonType.GHOST}
-          size={EButtonSize.MEDIUM}
+          buttonType="ghost"
+          size="medium"
           onClick={() => switchLoadingState()}
         >
           Change loading

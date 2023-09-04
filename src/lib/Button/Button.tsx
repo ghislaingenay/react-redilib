@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 import { useButton } from '@react-aria/button';
-import { ButtonType, ButtonTypes } from '@types';
+import { BtnProps } from '@types';
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 import { setTestIdProps } from '@utils';
 import { Spinner } from '@lib/Spinner';
@@ -43,13 +43,13 @@ const buttonCVA = cva('max-w-fit px-5', {
       loading: true,
       buttonType: 'success',
       className:
-        'bg-green-200 border border-opacity-0.5 border-none cursor-not-allowed hover:bg-gray-500',
+        'bg-green-200 border border-opacity-0.5 border-none cursor-not-allowed hover:bg-gray-500 focus:none active:bg-green-500 ',
     },
     {
       loading: true,
       buttonType: 'error',
       className:
-        'bg-red-200 border border-opacity-0.5  border-none cursor-not-allowed hover:bg-gray-500 ',
+        'bg-red-200 border border-opacity-0.5  border-none cursor-not-allowed hover:bg-gray-500 focus:none ',
     },
     {
       loading: true,
@@ -75,7 +75,14 @@ const buttonCVA = cva('max-w-fit px-5', {
     },
     {
       disabled: true,
-      buttonType: [...Object.keys(ButtonTypes)] as unknown as ButtonType,
+      buttonType: [
+        'success',
+        'error',
+        'primary',
+        'secondary',
+        'tertiary',
+        'ghost',
+      ],
       className: 'cursor-not-allowed hover:bg-gray-500 text-black',
     },
   ],
@@ -89,7 +96,7 @@ export function Button({
   testId = 'button',
   children = 'Button',
   onClick,
-}: Redilib.BtnProps) {
+}: BtnProps) {
   const ref = useRef();
   const { buttonProps } = useButton(
     { buttonType, size, loading } as AriaButton,
@@ -123,7 +130,11 @@ export function Button({
     >
       <div className="flex">
         {loading ? (
-          <span style={textStyle} className="flex justify-center animate-pulse">
+          <span
+            style={textStyle}
+            className="flex justify-center animate-pulse"
+            aria-disabled={true}
+          >
             <Spinner buttonType={buttonType} size={size} />
           </span>
         ) : (
