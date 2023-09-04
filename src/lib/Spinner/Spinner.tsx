@@ -1,13 +1,11 @@
 import { ButtonSizeVariant, ButtonTypeVariant } from '@lib/global.interface';
-import Redilib from '@types';
+import { SpinnerProps } from '@types';
 import { cva } from 'class-variance-authority';
 
-type SpinnerProps = {
-  buttonType: Redilib.ButtonType;
-  size: Redilib.ButtonSize;
-};
-
-export function Spinner({ buttonType, size }: SpinnerProps) {
+export function Spinner({
+  buttonType = 'primary',
+  size = 'medium',
+}: SpinnerProps) {
   const loadingSVG = cva(
     'w-4 h-4 text-gray-200 animate-spin place-self-center',
     {
