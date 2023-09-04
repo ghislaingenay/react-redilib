@@ -15,7 +15,7 @@ export function App() {
       <div className="flex flex-col gap-10">
         <Button
           buttonType={EButtonType.SUCCESS}
-          size={EButtonSize.MEDIUM}
+          size={EButtonSize.LARGE}
           loading={loading}
         >
           Success

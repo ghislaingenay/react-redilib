@@ -20,9 +20,9 @@ export function Spinner({ buttonType, size }: SpinnerProps) {
           [EButtonType.GHOST]: 'fill-gray-800',
         },
         size: {
-          [EButtonSize.SMALL]: 'w-5 h-5 p-0.5 w-10',
-          [EButtonSize.MEDIUM]: 'w-6 h-6 p-0.5 w-12',
-          [EButtonSize.LARGE]: 'w-7 h-7 p-0.5 w-14',
+          [EButtonSize.SMALL]: 'w-5 h-5 w-10',
+          [EButtonSize.MEDIUM]: 'w-6 h-6 w-12',
+          [EButtonSize.LARGE]: 'w-7 h-7 w-14',
         },
       },
     }
