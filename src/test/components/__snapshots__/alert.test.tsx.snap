@@ -3,7 +3,7 @@
 exports[`Alert should render successfully 1`] = `
 <div>
   <div
-    class="flex items-center p-4 mb-4 text-sm rounded-lg mx-5 alert-info"
+    class="flex items-center p-4 mb-4 text-sm rounded-lg mx-5 alert-info "
     role="alert"
   >
     <svg
@@ -42,7 +42,7 @@ exports[`Alert should render successfully 1`] = `
 exports[`Alert should render successfully with title 1`] = `
 <div>
   <div
-    class="flex items-center p-4 mb-4 text-sm rounded-lg mx-5 alert-info"
+    class="flex items-center p-4 mb-4 text-sm rounded-lg mx-5 alert-info "
     role="alert"
   >
     <svg

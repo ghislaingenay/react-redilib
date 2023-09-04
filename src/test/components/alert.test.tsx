@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { getClassListInHTMLElement } from '@utils';
 import { AlertType } from 'index';
-import MediaQuery from 'react-responsive';
 
 const resizeWindow = (x: number, y: number) => {
   window.innerWidth = x;

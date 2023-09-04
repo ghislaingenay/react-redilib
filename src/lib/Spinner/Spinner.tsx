@@ -1,4 +1,4 @@
-import { ButtonSizeVariant, ButtonTypeVariant } from '@lib/global.interface';
+import { ButtonSizeVariant, ButtonTypeVariant } from '@global/interface';
 import { SpinnerProps } from '@types';
 import { cva } from 'class-variance-authority';
 
