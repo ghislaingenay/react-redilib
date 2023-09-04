@@ -127,6 +127,7 @@ export function Button({
       className={buttonCVA({ buttonType, disabled, loading, size })}
       {...buttonProps}
       onClick={onClick}
+      aria-disabled={disabled}
       {...setTestIdProps(testId)}
     >
       <div className="flex">
