@@ -1,28 +1,70 @@
-// Type definitions for [~THE LIBRARY NAME~] [~OPTIONAL VERSION NUMBER~]
-// Project: [~THE PROJECT NAME~]
-// Definitions by: [~YOUR NAME~] <[~A URL FOR YOU~]>
+// Type definitions for react-redilib v1.0.0
+// Project: ui-library
+// Definitions by: Ghislain Genay <https://github.com/ghislaingenay>
+// TypeScript Version: 5.1.3
 
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-// type HTMLElement = HTMLElement;
-type BaseHTMLProps<T extends HTMLElement> = DetailedHTMLProps<
-  HTMLAttributes<T>,
-  T
->;
+import 'global.d.ts';
 
-type ButtonProps = BaseHTMLProps<HTMLButtonElement>;
+import React, { ReactNode } from 'react';
 
 type TestID = { testId?: string };
 
-type DivProps = BaseHTMLProps<HTMLDivElement>;
-type DividerProps = { children?: ReactNode } & TestID;
+/**
+ * Divider - A divider component that can be used to separate content.
+ */
+declare type DividerProps = {
+  children?: ReactNode;
+} & TestID;
 
-type AlertType = 'success' | 'info' | 'warning' | 'error';
-type AlertProps = {
-  /** some description here */
-  classes?: string;
+export type AlertType = 'success' | 'info' | 'warning' | 'error';
+/**
+ * Alert - Show a message to the user.
+ */
+export interface AlertProps extends TestID {
   message: string | JSX.Element;
   title?: string;
   type: AlertType;
   haveBorder?: boolean;
-} & TestID;
-type AlertColorDict = Record<AlertType, Record<'bg' | 'border', string>>;
+}
+
+declare const ButtonTypes: readonly [
+  'success',
+  'error',
+  'primary',
+  'secondary',
+  'tertiary',
+  'ghost'
+];
+
+export type ButtonType = (typeof ButtonTypes)[number];
+
+declare const ButtonSizes: readonly ['small', 'medium', 'large'];
+export type ButtonSize = (typeof ButtonSizes)[number];
+
+export interface CVAButtonProps extends ButtonProps {
+  /**
+   * @class Button - A button component that can be used to trigger an action.
+   * @param {string} [buttonType] - The type of button to render. Can be one of: 'success', 'error', 'primary', 'secondary', 'tertiary', 'ghost'.
+   * @param {string} [size] - The size of the button. Can be one of: 'small', 'medium', 'large'.
+   * @param {boolean} [loading] - Whether the button is in a loading state.
+   * @param {boolean} [disabled] - Whether the button is disabled.
+   */
+  children: React.ReactNode;
+  buttonType?: ButtonType;
+  size?: ButtonSize;
+  loading?: boolean;
+  disabled?: boolean;
+  /**
+   * Can be use to test the component for QA team
+   * @param {string} [testId] - The testId of the button.
+   */
+  testId?: string;
+  onClick?: () => void;
+}
+
+export type BtnProps = Omit<CVAButtonProps, 'className'>;
+
+export type SpinnerProps = {
+  buttonType?: ButtonType;
+  size?: ButtonSize;
+};

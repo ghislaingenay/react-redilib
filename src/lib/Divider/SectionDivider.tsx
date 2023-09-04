@@ -1,5 +1,6 @@
 import { setTestIdProps } from '@utils';
-import { DividerProps } from 'index';
+import { DividerProps } from '@types';
+import React from 'react';
 
 export const SectionDivider = ({ children, testId }: DividerProps) => {
   return (

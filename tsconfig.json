@@ -15,11 +15,13 @@
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["./src/lib/*"],
-      "@utils": ["./src/utils/index"]
+      "@global/*": ["./src/global/*"],
+      "@utils": ["./src/utils/index"],
+      "@types": ["./index.d"]
     },
     "jsx": "react-jsx",
     "allowJs": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true
   },

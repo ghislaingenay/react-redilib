@@ -7,7 +7,7 @@ const meta: Meta<typeof SectionDivider> = {
   tags: ['autodocs'],
   argTypes: {
     children: {
-      name: 'text',
+      name: 'Text',
       control: {
         type: 'text',
       },

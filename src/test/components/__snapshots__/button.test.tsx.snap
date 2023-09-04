@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render button should render successfully 1`] = `
+<body>
+  <div>
+    <button
+      aria-disabled="false"
+      class="max-w-fit px-5 bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700 focus:ring-blue-500 text-base h-10"
+      data-testid="button"
+      type="button"
+    >
+      <div
+        class="flex"
+      >
+        <span
+          class="leading-none"
+        >
+          Clicked
+        </span>
+      </div>
+    </button>
+  </div>
+</body>
+`;
