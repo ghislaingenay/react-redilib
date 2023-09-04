@@ -1,6 +1,6 @@
 import { setTestIdProps } from '@utils';
 import { AlertProps } from '@types';
-import { AlertColorDict } from '@lib/global.interface';
+import { AlertColorDict } from '@global/interface';
 
 /** Some comment about the alert */
 function Alert({

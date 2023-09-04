@@ -8,7 +8,7 @@ import {
   AriaButton,
   ButtonSizeVariant,
   ButtonTypeVariant,
-} from '@lib/global.interface';
+} from '@global/interface';
 
 const buttonCVA = cva('max-w-fit px-5', {
   variants: {
