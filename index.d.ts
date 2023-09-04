@@ -12,16 +12,15 @@ type TestID = { testId?: string };
 /**
  * Divider - A divider component that can be used to separate content.
  */
-export type DividerProps = { children?: ReactNode } & TestID;
-
-export type OptionalTestID = { testId?: string };
+declare type DividerProps = {
+  children?: ReactNode;
+} & TestID;
 
 export type AlertType = 'success' | 'info' | 'warning' | 'error';
 /**
  * Alert - Show a message to the user.
  */
 export interface AlertProps extends TestID {
-  /** some description here */
   message: string | JSX.Element;
   title?: string;
   type: AlertType;
@@ -64,3 +63,8 @@ export interface CVAButtonProps extends ButtonProps {
 }
 
 export type BtnProps = Omit<CVAButtonProps, 'className'>;
+
+export type SpinnerProps = {
+  buttonType?: ButtonType;
+  size?: ButtonSize;
+};

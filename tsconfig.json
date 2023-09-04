@@ -15,6 +15,7 @@
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["./src/lib/*"],
+      "@global/*": ["./src/global/*"],
       "@utils": ["./src/utils/index"],
       "@types": ["./index.d"]
     },
