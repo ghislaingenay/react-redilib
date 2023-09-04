@@ -75,6 +75,7 @@ const buttonCVA = cva('max-w-fit px-5', {
     },
     {
       disabled: true,
+      loading: [true, false],
       buttonType: [
         'success',
         'error',

@@ -22,19 +22,28 @@ export const Base: Story = {
   },
   argTypes: {
     type: {
+      name: 'type',
+      options: ['success', 'info', 'warning', 'error'],
       control: {
         type: 'select',
-        options: ['success', 'info', 'warning', 'error'],
       },
     },
     message: {
+      description: 'The message to display',
       control: {
         type: 'text',
       },
     },
     title: {
+      description: 'The title to display',
       control: {
         type: 'text',
+      },
+    },
+    haveBorder: {
+      description: 'Whether to have a border or not',
+      control: {
+        type: 'boolean',
       },
     },
   },

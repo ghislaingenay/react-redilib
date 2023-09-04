@@ -1,7 +1,8 @@
 import { setTestIdProps } from '@utils';
-import Redilib from '@types';
+import { DividerProps } from '@types';
+import React from 'react';
 
-export const SectionDivider = ({ children, testId }: Redilib.DividerProps) => {
+export const SectionDivider = ({ children, testId }: DividerProps) => {
   return (
     <div aria-labelledby="section divider" {...setTestIdProps(testId)}>
       {children ? (
